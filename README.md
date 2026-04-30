@@ -1,6 +1,6 @@
 # 📝 .Blog Platform
 
-> Nền tảng blog hiện đại, đầy đủ tính năng được xây dựng với Laravel 11 và Tailwind CSS
+> A modern, feature-rich blog platform built with Laravel 11 and Tailwind CSS
 
 ![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white)
@@ -10,152 +10,100 @@
 
 ---
 
-## 📑 Mục lục
+## 📑 Table of Contents
 
-- [Tính năng](#-tính-năng)
-- [Cài đặt](#-cài-đặt)
-- [Cấu trúc dự án](#-cấu-trúc-dự-án)
-- [Công nghệ sử dụng](#️-công-nghệ-sử-dụng)
-- [Lộ trình phát triển](#-lộ-trình-phát-triển)
-- [Đóng góp](#-đóng-góp)
-- [Bảo mật](#-bảo-mật)
-- [Giấy phép](#-giấy-phép)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Screenshots](#-screenshots)
+- [Tech Stack](#️-tech-stack)
+- [Project Structure](#-project-structure)
+- [Roadmap](#-roadmap)
+- [Security](#-security)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
-## ✨ Tính năng
+## ✨ Features
 
-### 👤 Tính năng người dùng
-- 🔐 **Xác thực** - Đăng ký, Đăng nhập, Xác thực Email, Đặt lại mật khẩu
-- 📝 **Quản lý bài viết** - Tạo, Sửa, Xóa bài viết với trình soạn thảo Quill WYSIWYG
-- 🖼️ **Tải lên media** - Tải ảnh thumbnail và ảnh inline với storage link
-- 🏷️ **Tags & Categories** - Tổ chức bài viết với tags và categories
-- 📚 **Series** - Nhóm các bài viết liên quan thành series
-- ❤️ **Tương tác xã hội** - Like (10/phút), Comment (5/phút), Bookmark bài viết
-- 💬 **Comment lồng nhau** - Trả lời comment (tối đa 2 cấp)
-- 🔍 **Tìm kiếm nâng cao** - Tìm theo tiêu đề, nội dung, tác giả với nhiều bộ lọc
-- 👤 **Hồ sơ người dùng** - Tùy chỉnh profile với avatar upload
-- 📊 **Thống kê đọc** - Đếm lượt xem tự động, ước tính thời gian đọc
+### 👤 User Features
+- 🔐 **Authentication** - Register, Login, Email Verification, Password Reset
+- 📝 **Post Management** - Create, Edit, Delete posts with Quill WYSIWYG editor
+- 🖼️ **Media Upload** - Thumbnail and inline image upload with storage link
+- 🏷️ **Tags & Categories** - Organize posts with tags and categories
+- 📚 **Series** - Group related posts into series
+- ❤️ **Social Interactions** - Like (10/min), Comment (5/min), Bookmark posts
+- 💬 **Nested Comments** - Reply to comments (max 2 levels)
+- 🔍 **Advanced Search** - Search by title, content, author with multiple filters
+- 👤 **User Profile** - Customizable profile with avatar upload
+- 📊 **Reading Stats** - Auto view counter, reading time estimation
 
-### 👨‍💼 Tính năng Admin
-- 📊 **Dashboard** - Phân tích toàn diện với biểu đồ tương tác
-  - Thống kê tăng trưởng người dùng
-  - Theo dõi lượt xem
-  - Top người dùng theo bài viết và lượt thích
-  - Top bài viết theo mức độ tương tác
-  - Bài viết xu hướng theo tháng
-- 👥 **Quản lý người dùng** - Đầy đủ các thao tác CRUD cho người dùng
-- 📝 **Quản lý bài viết** - Quản lý tất cả bài viết, ghim/bỏ ghim bài viết nổi bật
-- 🏷️ **Quản lý Category & Series** - Tổ chức cấu trúc nội dung
-- 📈 **Phân tích thời gian thực** - Thống kê và số liệu trực tiếp
+### 👨‍💼 Admin Features
+- 📊 **Dashboard** - Comprehensive analytics with interactive charts
+  - User growth statistics
+  - Views tracking
+  - Top users by posts and likes
+  - Top posts by engagement
+  - Monthly trending posts
+- 👥 **User Management** - Full CRUD operations for users
+- 📝 **Post Management** - Manage all posts, pin/unpin featured posts
+- 🏷️ **Category & Series Management** - Organize content structure
+- 📈 **Real-time Analytics** - Live statistics and metrics
 
-### 🔧 Tính năng kỹ thuật
-- ⚡ **Tối ưu hiệu suất**
-  - Đánh index database trên các cột thường xuyên truy vấn
-  - Eager loading để ngăn N+1 queries
-  - Tối ưu hóa query
-- 🛡️ **Bảo mật**
-  - Rate limiting (10 likes/phút, 5 comments/phút)
+### 🔧 Technical Features
+- ⚡ **Performance Optimized**
+  - Database indexing on frequently queried columns
+  - Eager loading to prevent N+1 queries
+  - Query optimization
+- 🛡️ **Security**
+  - Rate limiting (10 likes/min, 5 comments/min)
   - CSRF protection
   - XSS prevention
   - SQL injection prevention
   - Input validation
-  - Giới hạn độ sâu comment lồng nhau
-- 📱 **Responsive Design** - Thiết kế mobile-first với Tailwind CSS
-- 🎨 **UI hiện đại** - Giao diện sạch sẽ và trực quan
-- 🔄 **Sẵn sàng cho Real-time** - Cấu trúc chuẩn bị cho tích hợp WebSocket
+  - Nested comment depth limiting
+- 📱 **Responsive Design** - Mobile-first approach with Tailwind CSS
+- 🎨 **Modern UI** - Clean and intuitive interface
+- 🔄 **Ready for Real-time** - Structure prepared for WebSocket integration
 
 ---
 
-## 🌿 Branches
+## 🚀 Installation
 
-This repository uses a structured branching strategy for organized development:
-
-### Main Branches
-
-| Branch | Description | Status |
-|--------|-------------|--------|
-| `main` | Production-ready code | 🟢 Stable |
-| `develop` | Development branch | 🟡 Active |
-
-### Feature Branches
-
-| Branch | Feature | Status | Priority |
-|--------|---------|--------|----------|
-| `feature/dark-mode` | Dark mode implementation | 📋 Planned | ⭐⭐⭐ |
-| `feature/follow-system` | Follow/Unfollow users | 📋 Planned | ⭐⭐⭐ |
-| `feature/notifications` | Real-time notifications | 📋 Planned | ⭐⭐⭐ |
-| `feature/bookmarks-ui` | Bookmarks page UI | 📋 Planned | ⭐⭐⭐ |
-| `feature/reading-progress` | Reading progress bar | 📋 Planned | ⭐⭐ |
-| `feature/highlight-share` | Highlight & share quotes | 📋 Planned | ⭐⭐ |
-| `feature/toc` | Table of contents | 📋 Planned | ⭐⭐ |
-| `feature/code-highlight` | Code syntax highlighting | 📋 Planned | ⭐⭐ |
-| `feature/auto-save` | Auto-save draft | 📋 Planned | ⭐⭐ |
-| `feature/seo` | SEO optimization | 📋 Planned | ⭐⭐ |
-| `feature/full-text-search` | Scout + Meilisearch | 📋 Planned | ⭐ |
-| `feature/redis-cache` | Redis caching | 📋 Planned | ⭐ |
-| `feature/rest-api` | REST API layer | 📋 Planned | ⭐ |
-| `feature/ai-summary` | AI content summarization | 📋 Planned | ⭐ |
-| `feature/newsletter` | Email newsletter | 📋 Planned | ⭐ |
-
-### How to Use Branches
-
-```bash
-# Clone repository
-git clone https://github.com/YOUR_USERNAME/blog-platform.git
-
-# Switch to develop branch
-git checkout develop
-
-# Create new feature branch
-git checkout -b feature/your-feature-name
-
-# After completing feature
-git add .
-git commit -m "feat: Add your feature description"
-git push origin feature/your-feature-name
-
-# Create Pull Request to develop branch
-```
-
----
-
-## 🚀 Cài đặt
-
-### Yêu cầu hệ thống
+### Requirements
 - PHP >= 8.2
 - Composer
 - Node.js >= 18
-- MySQL >= 8.0 (hoặc MariaDB)
+- MySQL >= 8.0 (or MariaDB)
 - Git
 
-### Hướng dẫn cài đặt
+### Quick Start
 
-1. **Clone repository**
+1. **Clone the repository**
 ```bash
 git clone https://github.com/phamngocanh11/blog-platform.git
 cd blog-platform
 ```
 
-2. **Cài đặt PHP dependencies**
+2. **Install PHP dependencies**
 ```bash
 composer install
 ```
 
-3. **Cài đặt JavaScript dependencies**
+3. **Install JavaScript dependencies**
 ```bash
 npm install
 ```
 
-4. **Thiết lập môi trường**
+4. **Environment setup**
 ```bash
 cp .env.example .env
 php artisan key:generate
 ```
 
-5. **Cấu hình database**
+5. **Configure database**
 
-Chỉnh sửa file `.env`:
+Edit `.env` file:
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -165,7 +113,7 @@ DB_USERNAME=root
 DB_PASSWORD=your_password
 ```
 
-6. **Tạo database**
+6. **Create database**
 ```bash
 # MySQL
 mysql -u root -p
@@ -173,17 +121,17 @@ CREATE DATABASE blog_db;
 exit;
 ```
 
-7. **Chạy migrations**
+7. **Run migrations**
 ```bash
 php artisan migrate
 ```
 
-8. **Seed database (tùy chọn)**
+8. **Seed database (optional)**
 ```bash
 php artisan db:seed
 ```
 
-9. **Tạo storage link**
+9. **Create storage link**
 ```bash
 php artisan storage:link
 ```
@@ -193,33 +141,33 @@ php artisan storage:link
 npm run build
 ```
 
-11. **Chạy ứng dụng**
+11. **Run the application**
 
-**Cách 1: Hai terminal riêng biệt**
+**Option 1: Separate terminals**
 
 Terminal 1 - Laravel:
 ```bash
 php artisan serve
 ```
 
-Terminal 2 - Vite (cho development):
+Terminal 2 - Vite (for development):
 ```bash
 npm run dev
 ```
 
-**Cách 2: Production**
+**Option 2: Production**
 ```bash
 php artisan serve
-# Assets đã được build với npm run build
+# Assets already built with npm run build
 ```
 
-12. **Truy cập ứng dụng**
+12. **Access the application**
 - 🌐 Frontend: http://localhost:8000
 - 👨‍💼 Admin: http://localhost:8000/admin/dashboard
 
-### Tài khoản mặc định
+### Default Credentials
 
-Sau khi seed, đăng nhập với:
+After seeding, login with:
 - **Email:** admin@example.com
 - **Password:** password
 
@@ -359,7 +307,7 @@ blog-platform/
 - [ ] Real-time notifications
 - [ ] Bookmarks UI page
 
-### � Planned (v1.2)
+### 📋 Planned (v1.2)
 - [ ] Reading progress bar
 - [ ] Highlight & share quotes
 - [ ] Table of contents
@@ -394,7 +342,7 @@ This project implements multiple security measures:
 
 ### Reporting Security Issues
 
-If you discover a security vulnerability, please email: your.email@example.com
+If you discover a security vulnerability, please email: security@example.com
 
 ---
 
@@ -449,10 +397,9 @@ This project is open-sourced software licensed under the [MIT license](LICENSE).
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
+**Pham Ngoc Anh**
+- GitHub: [@phamngocanh11](https://github.com/phamngocanh11)
 - Email: your.email@example.com
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
 
 ---
 
@@ -468,11 +415,11 @@ This project is open-sourced software licensed under the [MIT license](LICENSE).
 
 ## 📊 Stats
 
-![GitHub repo size](https://img.shields.io/github/repo-size/YOUR_USERNAME/blog-platform)
-![GitHub contributors](https://img.shields.io/github/contributors/YOUR_USERNAME/blog-platform)
-![GitHub last commit](https://img.shields.io/github/last-commit/YOUR_USERNAME/blog-platform)
-![GitHub issues](https://img.shields.io/github/issues/YOUR_USERNAME/blog-platform)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/YOUR_USERNAME/blog-platform)
+![GitHub repo size](https://img.shields.io/github/repo-size/phamngocanh11/blog-platform)
+![GitHub contributors](https://img.shields.io/github/contributors/phamngocanh11/blog-platform)
+![GitHub last commit](https://img.shields.io/github/last-commit/phamngocanh11/blog-platform)
+![GitHub issues](https://img.shields.io/github/issues/phamngocanh11/blog-platform)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/phamngocanh11/blog-platform)
 
 ---
 
@@ -480,221 +427,6 @@ This project is open-sourced software licensed under the [MIT license](LICENSE).
 
 ### ⭐ If you like this project, please give it a star on GitHub! ⭐
 
-Made with ❤️ by [Your Name](https://github.com/YOUR_USERNAME)
+Made with ❤️ by [Pham Ngoc Anh](https://github.com/phamngocanh11)
 
 </div>
-
-## ✨ Features
-
-### 👤 User Features
-- 🔐 **Authentication** - Register, Login, Email Verification, Password Reset
-- 📝 **Post Management** - Create, Edit, Delete posts with Quill editor
-- 🖼️ **Media Upload** - Thumbnail and inline image upload
-- 🏷️ **Tags & Categories** - Organize posts with tags and categories
-- 📚 **Series** - Group related posts into series
-- ❤️ **Social Interactions** - Like, Comment (nested), Bookmark posts
-- 🔍 **Advanced Search** - Search by title, content, author with filters
-- 👤 **User Profile** - Customizable profile with avatar
-- 📊 **Reading Stats** - View count, reading time estimation
-
-### 👨‍💼 Admin Features
-- 📊 **Dashboard** - Comprehensive analytics with charts
-- 👥 **User Management** - CRUD operations for users
-- 📝 **Post Management** - Manage all posts, pin/unpin
-- 🏷️ **Category & Series Management**
-- 📌 **Pin Posts** - Feature important posts
-- 📈 **Analytics** - User growth, views, top posts statistics
-
-### 🔧 Technical Features
-- ⚡ **Performance** - Database indexing, eager loading
-- 🛡️ **Security** - Rate limiting, CSRF protection, input validation
-- 📱 **Responsive Design** - Mobile-friendly interface
-- 🎨 **Modern UI** - Tailwind CSS with custom components
-- 🔄 **Real-time** - Live view counter (ready for WebSocket)
-
-## 🚀 Installation
-
-### Requirements
-- PHP >= 8.2
-- Composer
-- Node.js >= 18
-- MySQL >= 8.0
-
-### Setup
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/YOUR_USERNAME/blog-platform.git
-cd blog-platform
-```
-
-2. **Install dependencies**
-```bash
-composer install
-npm install
-```
-
-3. **Environment setup**
-```bash
-cp .env.example .env
-php artisan key:generate
-```
-
-4. **Configure database**
-Edit `.env` file:
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=blog_db
-DB_USERNAME=root
-DB_PASSWORD=your_password
-```
-
-5. **Run migrations**
-```bash
-php artisan migrate
-```
-
-6. **Seed database (optional)**
-```bash
-php artisan db:seed
-```
-
-7. **Create storage link**
-```bash
-php artisan storage:link
-```
-
-8. **Run the application**
-
-Terminal 1:
-```bash
-php artisan serve
-```
-
-Terminal 2:
-```bash
-npm run dev
-```
-
-9. **Access the application**
-- Frontend: http://localhost:8000
-- Admin: http://localhost:8000/admin/dashboard
-
-### Default Admin Account
-After seeding, you can login with:
-- Email: admin@example.com
-- Password: password
-
-## 📸 Screenshots
-
-### Homepage
-![Homepage](screenshots/homepage.png)
-
-### Post Detail
-![Post Detail](screenshots/post-detail.png)
-
-### Admin Dashboard
-![Admin Dashboard](screenshots/admin-dashboard.png)
-
-## 🛠️ Tech Stack
-
-- **Backend:** Laravel 11
-- **Frontend:** Tailwind CSS, Alpine.js
-- **Database:** MySQL
-- **Editor:** Quill.js
-- **Charts:** ApexCharts, Chart.js
-- **Icons:** Font Awesome
-- **Build Tool:** Vite
-
-## 📦 Project Structure
-
-```
-blog-platform/
-├── app/
-│   ├── Http/
-│   │   ├── Controllers/
-│   │   │   ├── Admin/
-│   │   │   └── User/
-│   │   └── Middleware/
-│   └── Models/
-├── database/
-│   ├── migrations/
-│   └── seeders/
-├── resources/
-│   ├── views/
-│   │   ├── admin/
-│   │   ├── user/
-│   │   └── layouts/
-│   ├── css/
-│   └── js/
-├── routes/
-│   ├── web.php
-│   └── auth.php
-└── public/
-```
-
-## 🔐 Security
-
-- ✅ CSRF Protection
-- ✅ XSS Prevention
-- ✅ SQL Injection Prevention
-- ✅ Rate Limiting (10 likes/min, 5 comments/min)
-- ✅ Password Hashing (Bcrypt)
-- ✅ Email Verification
-- ✅ Input Validation
-
-## 🎯 Roadmap
-
-### Phase 1: Core Features ✅
-- [x] User authentication
-- [x] Post CRUD
-- [x] Comments system
-- [x] Like/Bookmark
-- [x] Admin dashboard
-
-### Phase 2: Enhancements 🚧
-- [ ] Follow/Unfollow users
-- [ ] Real-time notifications
-- [ ] Dark mode
-- [ ] Bookmarks UI
-- [ ] Reading progress bar
-
-### Phase 3: Advanced Features 📋
-- [ ] Full-text search (Scout + Meilisearch)
-- [ ] Redis caching
-- [ ] REST API
-- [ ] AI content summarization
-- [ ] Newsletter system
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is open-sourced software licensed under the [MIT license](LICENSE).
-
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
-- Email: your.email@example.com
-
-## 🙏 Acknowledgments
-
-- [Laravel](https://laravel.com)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Quill.js](https://quilljs.com)
-- [ApexCharts](https://apexcharts.com)
-
----
-
-
