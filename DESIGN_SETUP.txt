@@ -23,57 +23,50 @@
    - design-demo.blade.php (showcase toàn bộ design system)
    - Route: /design-demo
 
-6. ✅ Build CSS thành công
+6. ✅ ÁP DỤNG DESIGN MỚI VÀO HOMEPAGE:
+   - Blog index page (resources/views/user/blog/index.blade.php)
+   - Featured posts section với modern styling
+   - Recommended posts grid với hover effects
+   - Sidebar với modern card design
+   - Custom pagination styling
+   - Backup file cũ: index-old.blade.php
+
+7. ✅ Build CSS thành công
+8. ✅ Push lên GitHub
 
 ==========================================
-🚀 CÁCH XEM DEMO:
+🚀 CÁCH XEM KẾT QUẢ:
 
 1. Chạy Laravel server:
    php artisan serve
 
-2. Mở browser và truy cập:
-   http://localhost:8000/design-demo
-
-3. Bạn sẽ thấy:
-   - Typography showcase (Newsreader + Inter)
-   - Color palette
-   - Buttons
-   - Cards với design mới
-   - Form elements
-   - Reading width demo (720px)
+2. Xem các trang:
+   - Design Demo: http://localhost:8000/design-demo
+   - Homepage MỚI: http://localhost:8000/
+   - So sánh với cũ: Xem file index-old.blade.php
 
 ==========================================
-🎨 SỬ DỤNG DESIGN MỚI:
+🎨 NHỮNG GÌ ĐÃ THAY ĐỔI:
 
-1. COLORS - Sử dụng trong class:
-   bg-primary          → Màu đen (#000000)
-   bg-secondary        → Màu teal (#316763)
-   bg-surface          → Màu nền (#fcf8fa)
-   text-on-surface     → Màu chữ chính
-   border-outline-variant → Màu viền
+HOMEPAGE (Blog Index):
+✅ Header sections với typography mới
+✅ Featured/Pinned posts - Card design hiện đại
+✅ Recommended posts - Grid layout với hover effects
+✅ Latest articles - List view với modern styling
+✅ Sidebar - Most Liked & Trending sections
+✅ Pagination - Custom styling với màu mới
+✅ Responsive design - Mobile-friendly
+✅ Smooth transitions và animations
 
-2. TYPOGRAPHY - Font classes:
-   font-display        → Newsreader (cho tiêu đề)
-   font-body           → Inter (cho nội dung)
-   
-   text-display-xl     → 64px headlines
-   text-headline-lg    → 40px headlines
-   text-headline-md    → 32px headlines
-   text-body-lg        → 18px body
-   text-body-md        → 16px body
-   text-label-sm       → 14px labels
-
-3. SPACING:
-   max-w-reading       → 720px (optimal reading width)
-   max-w-container     → 1280px (container width)
-   py-section-gap      → 80px (section spacing)
-
-4. COMPONENTS:
-   <x-modern-card title="..." description="...">
-       <x-slot:footer>
-           <!-- Footer content -->
-       </x-slot:footer>
-   </x-modern-card>
+DESIGN ELEMENTS:
+- Font Newsreader cho tiêu đề
+- Font Inter cho nội dung
+- Màu primary: Black (#000000)
+- Màu secondary: Teal (#316763)
+- Màu surface: Light pink (#fcf8fa)
+- Border radius: 8px-12px
+- Hover effects: Scale, shadow, color transitions
+- Icons: SVG icons cho Like & View
 
 ==========================================
 📝 VÍ DỤ SỬ DỤNG:
@@ -100,16 +93,15 @@
 />
 
 ==========================================
-🔄 TIẾP THEO:
+🔄 TIẾP THEO - CÒN LẠI:
 
-1. Xem demo tại: http://localhost:8000/design-demo
-2. Áp dụng design vào các trang hiện có:
-   - Homepage
-   - Blog posts
-   - Admin dashboard
-3. Tạo thêm components mới nếu cần
-4. Test responsive design
-5. Merge vào develop khi hoàn thành
+Các trang cần áp dụng design:
+1. ⏳ Blog Detail Page (show.blade.php) - Đang làm
+2. ⏳ User Profile Page
+3. ⏳ Post Editor Page
+4. ⏳ Admin Dashboard
+5. ⏳ Login/Register Pages
+6. ⏳ Search Results Page
 
 ==========================================
 📁 FILES ĐÃ THAY ĐỔI:
@@ -119,20 +111,35 @@ Modified:
 - resources/views/layouts/app.blade.php (thêm fonts)
 - resources/views/layouts/user.blade.php (thêm fonts)
 - routes/web.php (thêm route /design-demo)
+- resources/views/user/blog/index.blade.php (MODERN DESIGN)
 
 New:
 - resources/views/components/modern-card.blade.php
 - resources/views/design-demo.blade.php
+- resources/views/user/blog/index-old.blade.php (backup)
 
 ==========================================
 ⚠️ LƯU Ý:
 
-- Giao diện CŨ vẫn hoạt động bình thường
-- Design MỚI chỉ áp dụng khi bạn sử dụng các class mới
-- Có thể áp dụng từng phần, không cần thay đổi toàn bộ
-- Nhánh feature/modern-design độc lập, không ảnh hưởng develop
+- Giao diện CŨ đã được backup (index-old.blade.php)
+- Có thể rollback bất cứ lúc nào
+- Design MỚI đã được áp dụng vào Homepage
+- Các trang khác vẫn giữ design cũ
+- Nhánh feature/modern-design độc lập
+
+==========================================
+🎯 HƯỚNG DẪN ROLLBACK (nếu cần):
+
+Nếu muốn quay lại design cũ:
+```bash
+cd resources/views/user/blog/
+rm index.blade.php
+mv index-old.blade.php index.blade.php
+npm run build
+```
 
 ==========================================
 🎉 CHÚC BẠN THÀNH CÔNG!
 
-Nếu cần giúp đỡ thêm, hãy hỏi tôi!
+Homepage đã có design mới!
+Tiếp tục áp dụng cho các trang khác nhé!
