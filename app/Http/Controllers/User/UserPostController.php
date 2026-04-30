@@ -11,6 +11,16 @@ use Illuminate\Support\Facades\Storage;
 
 class UserPostController extends Controller
 {
+    public function index()
+    {
+        $posts = Post::where('user_id', auth()->id())
+            ->with(['category', 'series'])
+            ->latest()
+            ->paginate(10);
+
+        return view('user.post.list', compact('posts'));
+    }
+
     public function create()
     {
         $categories = Category::all();

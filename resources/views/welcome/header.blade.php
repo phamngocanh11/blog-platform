@@ -64,7 +64,7 @@
                              class="absolute right-0 mt-2 w-48 bg-surface-container-lowest rounded-lg shadow-lg border border-outline-variant py-2"
                              style="display: none;">
                             
-                            <a href="{{ route('userprofile.index') }}" 
+                            <a href="{{ route('profile.edit') }}" 
                                class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container transition-colors">
                                 Profile
                             </a>

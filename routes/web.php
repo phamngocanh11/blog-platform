@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/upload-avatar', [UserProfileController::class, 'updateAvatar'])->name('profile.uploadAvatar');
 
     Route::get('/posts/create', [UserPostController::class, 'create'])->name('userposts.create');
+    Route::get('/posts', [UserPostController::class, 'index'])->name('userposts.index');
     Route::post('/posts/store', [UserPostController::class, 'store'])->name('userposts.store');
     Route::post('/user/upload-image', [UserPostController::class, 'uploadImage'])->name('userupload.image');
     Route::get('/posts/{post}/edit', [UserPostController::class, 'edit'])->name('userposts.edit');
