@@ -18,18 +18,18 @@
                 
                 @auth
                     <a href="{{ route('userposts.index') }}" 
-                       class="font-body text-body-md text-on-surface hover:text-primary transition-colors {{ request()->routeIs('userposts.*') ? 'text-primary font-semibold' : '' }}">
+                       class="font-body text-body-md text-on-surface hover:text-primary transition-colors {{ request()->routeIs('userposts.index') ? 'text-primary font-semibold' : '' }}">
                         My Posts
                     </a>
                     
                     <a href="{{ route('userposts.create') }}" 
-                       class="font-body text-body-md text-on-surface hover:text-primary transition-colors">
+                       class="font-body text-body-md text-on-surface hover:text-primary transition-colors {{ request()->routeIs('userposts.create') || request()->routeIs('userposts.edit') ? 'text-primary font-semibold' : '' }}">
                         Write
                     </a>
                 @endauth
 
                 <a href="{{ route('search') }}" 
-                   class="font-body text-body-md text-on-surface hover:text-primary transition-colors">
+                   class="font-body text-body-md text-on-surface hover:text-primary transition-colors {{ request()->routeIs('search') ? 'text-primary font-semibold' : '' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
@@ -123,24 +123,24 @@
              style="display: none;">
             <div class="space-y-2">
                 <a href="{{ route('blogs.index') }}" 
-                   class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container rounded-lg transition-colors">
+                   class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container rounded-lg transition-colors {{ request()->routeIs('blogs.index') ? 'bg-surface-container text-primary font-semibold' : '' }}">
                     Home
                 </a>
                 
                 @auth
                     <a href="{{ route('userposts.index') }}" 
-                       class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container rounded-lg transition-colors">
+                       class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container rounded-lg transition-colors {{ request()->routeIs('userposts.index') ? 'bg-surface-container text-primary font-semibold' : '' }}">
                         My Posts
                     </a>
                     
                     <a href="{{ route('userposts.create') }}" 
-                       class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container rounded-lg transition-colors">
+                       class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container rounded-lg transition-colors {{ request()->routeIs('userposts.create') || request()->routeIs('userposts.edit') ? 'bg-surface-container text-primary font-semibold' : '' }}">
                         Write
                     </a>
                 @endauth
 
                 <a href="{{ route('search') }}" 
-                   class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container rounded-lg transition-colors">
+                   class="block px-4 py-2 font-body text-body-md text-on-surface hover:bg-surface-container rounded-lg transition-colors {{ request()->routeIs('search') ? 'bg-surface-container text-primary font-semibold' : '' }}">
                     Search
                 </a>
             </div>
