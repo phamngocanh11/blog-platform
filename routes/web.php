@@ -18,6 +18,11 @@ use App\Http\Controllers\AdminDashboardController;
 Route::get('/', [BlogController::class, 'index'])->name('blogs.index');
 Route::get('/blog/{post}', [BlogController::class, 'show'])->name('blogs.show');
 
+// Design Demo Route (Development Only)
+Route::get('/design-demo', function () {
+    return view('design-demo');
+})->name('design.demo');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserProfileController::class, 'index'])->name('profile.edit');
     Route::put('/profile/update', [UserProfileController::class, 'update'])->name('profile.update');
