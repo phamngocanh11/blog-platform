@@ -216,7 +216,7 @@
                                placeholder="Enter tag name..."
                                class="w-full px-4 py-2 border border-secondary-light/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent">
                         <button type="submit" 
-                                class="w-full px-4 py-2 bg-secondary text-white font-medium rounded-lg hover:bg-secondary-dark transition-colors">
+                                class="w-full px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors">
                             Search Tags
                         </button>
                     </form>

@@ -105,7 +105,7 @@
 
                         <div class="flex justify-end pt-4">
                             <button type="submit" 
-                                    class="px-6 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-secondary-dark transition-colors">
+                                    class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors">
                                 Change Password
                             </button>
                         </div>

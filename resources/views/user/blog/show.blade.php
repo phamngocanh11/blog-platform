@@ -107,7 +107,7 @@
                     @if(Auth::check() && Auth::id() === $post->user_id)
                     <div class="flex gap-3 mt-6">
                         <a href="{{ route('userposts.edit', $post->id) }}" 
-                           class="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-secondary-dark transition-colors">
+                           class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors">
                             Edit Post
                         </a>
                         <form action="{{ route('userposts.destroy', $post->id) }}" 
