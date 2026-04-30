@@ -49,7 +49,7 @@
                         </li>
                     @endauth
                     <li>
-                        <a href="{{ route('search.index') }}" class="font-body text-body-md text-on-surface-variant hover:text-primary transition-colors">
+                        <a href="{{ route('search') }}" class="font-body text-body-md text-on-surface-variant hover:text-primary transition-colors">
                             Search
                         </a>
                     </li>
