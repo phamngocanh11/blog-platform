@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Category Archive - The Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Newsreader:ital,wght@0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#574425",
+                      "tertiary": "#000000",
+                      "surface-variant": "#e4e2e4",
+                      "surface": "#fcf8fa",
+                      "tertiary-fixed": "#fcdeb5",
+                      "secondary": "#316763",
+                      "primary-fixed-dim": "#bec6e0",
+                      "inverse-primary": "#bec6e0",
+                      "on-secondary": "#ffffff",
+                      "primary": "#000000",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "background": "#fcf8fa",
+                      "primary-container": "#131b2e",
+                      "on-primary-container": "#7c839b",
+                      "surface-container": "#f0edef",
+                      "secondary-fixed-dim": "#9ad1cb",
+                      "on-error": "#ffffff",
+                      "tertiary-fixed-dim": "#dec29a",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "surface-tint": "#565e74",
+                      "outline": "#76777d",
+                      "on-secondary-container": "#376d69",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#e4e2e4",
+                      "on-primary-fixed": "#131b2e",
+                      "on-background": "#1b1b1d",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-container": "#b5ede7",
+                      "surface-container-low": "#f6f3f5",
+                      "secondary-fixed": "#b5ede7",
+                      "on-tertiary-fixed": "#271901",
+                      "on-surface": "#1b1b1d",
+                      "outline-variant": "#c6c6cd",
+                      "on-surface-variant": "#45464d",
+                      "on-tertiary-container": "#98805d",
+                      "on-secondary-fixed": "#00201e",
+                      "surface-dim": "#dcd9db",
+                      "tertiary-container": "#271901",
+                      "surface-bright": "#fcf8fa",
+                      "on-secondary-fixed-variant": "#144f4b",
+                      "primary-fixed": "#dae2fd",
+                      "inverse-on-surface": "#f3f0f2",
+                      "on-tertiary": "#ffffff",
+                      "inverse-surface": "#303032",
+                      "surface-container-high": "#eae7e9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "section-gap": "80px",
+                      "reading-width": "720px",
+                      "base-unit": "8px"
+              },
+              "fontFamily": {
+                      "display-xl": [
+                              "Newsreader"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Newsreader"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Newsreader"
+                      ]
+              },
+              "fontSize": {
+                      "display-xl": [
+                              "64px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.7",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm shadow-slate-200/20 dark:shadow-none font-serif italic text-lg tracking-tight">
+<div class="flex justify-between items-center w-full px-8 h-16 max-w-container-max mx-auto">
+<div class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-50 not-italic">
+                The Ledger
+            </div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Archive</a>
+<a class="text-slate-900 dark:text-slate-50 border-b border-slate-900 dark:border-slate-50 pb-1 font-bold hover:text-slate-900 dark:hover:text-slate-100 transition-colors opacity-80 transition-opacity" href="#">Topics</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Series</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">About</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="text-slate-900 dark:text-slate-50 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications" data-weight="regular">notifications</span>
+</button>
+<button class="text-slate-900 dark:text-slate-50 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle" data-weight="regular">account_circle</span>
+</button>
+<button class="text-slate-900 dark:text-slate-50 hover:text-slate-900 dark:hover:text-slate-100 transition-colors not-italic font-bold">
+                    Write
+                </button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-8 py-section-gap flex flex-col md:flex-row gap-gutter">
+<!-- Left Side Navigation (Desktop Context) -->
+<aside class="hidden md:block w-64 flex-shrink-0 relative">
+<div class="sticky top-24 flex flex-col space-y-4">
+<div class="mb-8">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest mb-4">Explore Topics</h2>
+<nav class="flex flex-col space-y-2">
+<a class="text-on-surface font-body-md text-body-md py-2 border-l-2 border-transparent hover:border-outline-variant pl-4 transition-colors" href="#">Architecture</a>
+<a class="text-on-surface font-body-md text-body-md py-2 border-l-2 border-primary pl-4 font-bold bg-surface-container-low transition-colors" href="#">Modernism</a>
+<a class="text-on-surface font-body-md text-body-md py-2 border-l-2 border-transparent hover:border-outline-variant pl-4 transition-colors" href="#">Urban Design</a>
+<a class="text-on-surface font-body-md text-body-md py-2 border-l-2 border-transparent hover:border-outline-variant pl-4 transition-colors" href="#">Sustainability</a>
+</nav>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-grow max-w-reading-width mx-auto md:mx-0">
+<!-- Category Header -->
+<header class="mb-16 border-b border-surface-variant pb-12">
+<div class="flex items-center space-x-2 mb-4 text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Topic</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Modernism</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-on-surface mb-6">Literary Modernism</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                    An exploration of the fragmented narratives, stream of consciousness, and structural innovations that defined the literary landscape of the early 20th century. Essays and critiques analyzing the shift away from realism.
+                </p>
+</header>
+<!-- Articles Grid (Bento-inspired layout for top items, then list) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<!-- Featured Article (Spans 2 columns on desktop) -->
+<article class="md:col-span-2 group cursor-pointer">
+<div class="relative w-full h-96 mb-6 overflow-hidden bg-surface-variant rounded-lg border border-surface-variant group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+<img alt="Featured article image" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="A moody, high-contrast black and white photograph of an antique typewriter sitting on a wooden desk. Soft natural light filters through an unseen window, highlighting the dust motes in the air and casting long, dramatic shadows. The scene evokes a sense of quiet intellectual focus and literary history, perfectly matching a minimalist, serene modern editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkPQe83auJ0_2I14Gh8t7vzZyQgEbpDVVa3jpNJmCJspjPk5t8w_sscvbNCZ97VIOqHd9lx0EFB7DfeOvcGJhUsbSLlP8BiSqmZBxX9UUt4dElLcwM9L5Ref-yUz9xzOBwPn43lzwQGUVAxBbkealJfrKFg0nhRVdVSAIlettn-hS35ZAnP1UpRu7fJWmydSNkbwks3_FY2wi2dhUoJxxNVCWP-G10Ce9FDLDZM5V2sMQNgUbAwhXMEWu1uWVXU3PyE1feYv7AGtxi"/>
+</div>
+<div class="flex flex-col space-y-3">
+<div class="flex items-center space-x-4 text-on-surface-variant font-label-sm text-label-sm">
+<span>12 Min Read</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span>Oct 24, 2023</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface group-hover:text-secondary transition-colors">
+                            The Fractured Lens: Joyce, Woolf, and the End of the Omniscient Narrator
+                        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                            How the devastation of World War I shattered the illusion of a cohesive reality, forcing modernist writers to turn inward to subjective experience and reinvent narrative structure entirely.
+                        </p>
+</div>
+</article>
+<!-- Standard Grid Articles -->
+<article class="group cursor-pointer flex flex-col">
+<div class="relative w-full h-64 mb-4 overflow-hidden bg-surface-variant rounded border border-surface-variant group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+<img alt="Article image" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="Abstract architectural photography focusing on the sharp, geometric lines of a brutalist concrete building against a stark, pale sky. The composition is highly structured and minimalist, emphasizing form and shadow over color. The aesthetic conveys a sense of imposing, intellectual modernism consistent with an authoritative, calm editorial design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCARqWxeWrii3OmOupaUwwAJW6I1TyIU5dUM0S9deALukKk-hUs2CR3tbNjhjevsQVNbkoizTABODLi8UlY9Qypn0ZwUWpI58Gy5wqPfTDyfzZ1WafTVPIpI78C3eJiMR-Rq0CS4Rz6oJp6gItQ9-FRPy28VbYFTpzBontQebTmIlXrQ7D3jW5H5nFNRpOD_o6xug20IoS2L7zHP-o-2tlbcsV61R2vmFpXsQgF6PMN8f80r2bs4Rr2Mo6Mef175BZUXMHo2_LdzVGM"/>
+</div>
+<div class="flex flex-col space-y-2 flex-grow">
+<div class="flex items-center space-x-3 text-on-surface-variant font-label-sm text-label-sm">
+<span>8 Min Read</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors line-clamp-2">
+                            Concrete Poetry: Architecture's Influence on Text
+                        </h3>
+</div>
+</article>
+<article class="group cursor-pointer flex flex-col">
+<div class="relative w-full h-64 mb-4 overflow-hidden bg-surface-variant rounded border border-surface-variant group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+<img alt="Article image" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="A close-up shot of an open, old book with thick, textured paper. The text is slightly out of focus, drawing attention to a pair of wire-rimmed reading glasses resting delicately on the pages. The lighting is warm and ambient, suggesting a quiet library environment. The mood is deeply intellectual and serene, fitting a sophisticated reading platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGI5oatWKxiFb0PAnv6lQ88ieBwm3qR8DI7sv-RqLvjYVcr1jeLqFRxgWIXmbmMDbbWA0sk1AbaOoNajr1lOdVI6jpcZApPMqGs2I9ECYtWo2iT9GmMCoZgOkbcwPabgA0V6LY6WTFCI8bP8Z3wgFz1ssLESwe9czYLb_H-pn_RTK6DII5dN-eAQwN59wgll5hRowckksg9vI-LXMKmNsWUi9PaxlDVWxY6LomSo1OSYm2S5TW94adAsxqwB2GGySmj-RBIGmksyjM"/>
+</div>
+<div class="flex flex-col space-y-2 flex-grow">
+<div class="flex items-center space-x-3 text-on-surface-variant font-label-sm text-label-sm">
+<span>15 Min Read</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors line-clamp-2">
+                            Revisiting 'The Wasteland' A Century Later
+                        </h3>
+</div>
+</article>
+<article class="group cursor-pointer flex flex-col">
+<div class="relative w-full h-64 mb-4 overflow-hidden bg-surface-variant rounded border border-surface-variant group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+<img alt="Article image" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="A minimalist composition showing a single cup of black coffee on a pristine white marble table, next to a plain notebook and a fountain pen. The top-down view is clean and organized, with vast amounts of negative space surrounding the objects. The scene represents clear thought and deep focus in a bright, modern light-mode setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzxbZcXV6PG84v0VGtqCUFCLoGLiStAQnbINqnn-e0ogiwb5V-FPDQS2cK5YZ5QJVtkzbM6HAeW_ZNaGIQvIX3AsjiOZdlW4dothyzH_BtbDP8W0FIfQzEw2ker_hj9ApmTP3Lrya17AWTrvFZxhzjpoFwOfcg7y1J8d6zuJxlEkfFO2n5odE5w2QJA_WzUP55loA6CrR44fFsRjc--Styz8f29MwLuevpFNATLlm8HWrpvnZtotPyRjUxxqziEcG6sct5Woa8HclU"/>
+</div>
+<div class="flex flex-col space-y-2 flex-grow">
+<div class="flex items-center space-x-3 text-on-surface-variant font-label-sm text-label-sm">
+<span>6 Min Read</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors line-clamp-2">
+                            The Aesthetics of Silence in Post-War Fiction
+                        </h3>
+</div>
+</article>
+<article class="group cursor-pointer flex flex-col">
+<div class="relative w-full h-64 mb-4 overflow-hidden bg-surface-variant rounded border border-surface-variant group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300">
+<img alt="Article image" class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500" data-alt="A serene landscape of distant, mist-covered mountains viewed through a large, unadorned window pane. The framing is stark and modern, emphasizing the contrast between the rigid structure of the window and the wildness of nature outside. The colors are muted blues and grays, contributing to a calm, authoritative, and minimalist digital library aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcUQPZrfjDcgV7ZwFIPPU05LwI_QmTPZXSlfmnB5Oho1KekdtEsn1uUH40amz36zqJ3UZ9vnvBm_7t9utmuu0Ocy6VXcggWJ_Yj5IMfLtIHooMS2EeN4bwFDfTWLfl8ZXL6WppxbVRNllczMoJy3XKG5y7KC3zzYkMZJ7RtYNeLyEkgWflCCYM3XF0rR6yinqlexnCYAdVraeK67WZeY7VNtQvvercqJjNVa1KvESR9k6qfnU5t49NtF9ChXLIHhD0ByMBwYz1MfHk"/>
+</div>
+<div class="flex flex-col space-y-2 flex-grow">
+<div class="flex items-center space-x-3 text-on-surface-variant font-label-sm text-label-sm">
+<span>10 Min Read</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors line-clamp-2">
+                            Beyond the City: Modernism in Rural Landscapes
+                        </h3>
+</div>
+</article>
+</div>
+<!-- Load More Action -->
+<div class="flex justify-center mt-12 pt-8 border-t border-surface-variant">
+<button class="px-8 py-3 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest rounded hover:bg-surface-tint transition-colors">
+                    Load More Articles
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-950 w-full py-20 mt-40 border-t border-slate-100 dark:border-slate-900">
+<div class="max-w-7xl mx-auto px-8 flex flex-col items-center space-y-8">
+<div class="font-serif font-black text-slate-200 dark:text-slate-800 text-3xl">
+                The Ledger
+            </div>
+<nav class="flex flex-wrap justify-center gap-6 font-serif text-xs uppercase tracking-widest text-slate-400">
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Archives</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Contact</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Press Kit</a>
+</nav>
+<div class="text-center font-serif text-xs uppercase tracking-widest text-slate-400 mt-8">
+                © 2024 The Ledger Editorial Platform. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

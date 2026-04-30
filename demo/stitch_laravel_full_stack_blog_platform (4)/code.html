@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - The Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;500;600&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#00201e",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#eae7e9",
+                    "on-background": "#1b1b1d",
+                    "on-error": "#ffffff",
+                    "secondary": "#316763",
+                    "inverse-primary": "#bec6e0",
+                    "on-primary-container": "#7c839b",
+                    "surface-bright": "#fcf8fa",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "surface-container": "#f0edef",
+                    "on-tertiary-fixed": "#271901",
+                    "error": "#ba1a1a",
+                    "primary-fixed-dim": "#bec6e0",
+                    "secondary-fixed": "#b5ede7",
+                    "surface-dim": "#dcd9db",
+                    "primary-fixed": "#dae2fd",
+                    "tertiary-container": "#271901",
+                    "outline-variant": "#c6c6cd",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#000000",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-surface": "#1b1b1d",
+                    "inverse-on-surface": "#f3f0f2",
+                    "secondary-fixed-dim": "#9ad1cb",
+                    "background": "#fcf8fa",
+                    "surface": "#fcf8fa",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e4e2e4",
+                    "tertiary-fixed": "#fcdeb5",
+                    "on-tertiary-container": "#98805d",
+                    "primary-container": "#131b2e",
+                    "surface-tint": "#565e74",
+                    "on-surface-variant": "#45464d",
+                    "on-primary-fixed": "#131b2e",
+                    "on-secondary-fixed-variant": "#144f4b",
+                    "on-secondary-container": "#376d69",
+                    "surface-container-low": "#f6f3f5",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e4e2e4",
+                    "inverse-surface": "#303032",
+                    "tertiary": "#000000",
+                    "secondary-container": "#b5ede7",
+                    "outline": "#76777d",
+                    "on-error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "gutter": "24px",
+                    "base-unit": "8px",
+                    "reading-width": "720px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Newsreader"],
+                    "headline-lg": ["Newsreader"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-xl": ["Newsreader"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-[0_4px_20px_-2px_rgba(15,23,42,0.02)] border-b border-surface-variant font-headline-md tracking-tight">
+<div class="flex items-center justify-between px-8 h-20 max-w-[1440px] mx-auto">
+<!-- Brand -->
+<a class="text-2xl font-bold text-on-surface" href="#">The Ledger</a>
+<!-- Navigation Links (All inactive as this is a profile destination) -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-all duration-300" href="#">Essays</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-all duration-300" href="#">Archive</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-all duration-300" href="#">Topics</a>
+<a class="text-on-surface-variant font-medium hover:text-secondary transition-all duration-300" href="#">About</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-6 py-2 bg-primary text-on-primary font-label-sm text-label-sm rounded-full hover:opacity-90 active:scale-[0.98] transition-transform">Subscribe</button>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-all duration-300 rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<!-- Active state logic: We are on a profile page, so highlighting the person icon contextually -->
+<button class="p-2 text-primary font-semibold border-b border-secondary rounded-full hover:bg-surface-variant/50">
+<span class="material-symbols-outlined fill">person</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="flex-grow pt-20">
+<!-- Profile Header -->
+<section class="max-w-container-max mx-auto w-full relative">
+<!-- Banner Image -->
+<div class="w-full h-64 md:h-80 lg:h-96 bg-surface-variant overflow-hidden relative group">
+<img alt="Profile Banner" class="w-full h-full object-cover" data-alt="A panoramic, minimalist architectural landscape serving as a profile banner. The scene depicts a serene, modern concrete structure with clean geometric lines, bathed in soft, diffused morning light. Vast, empty white space dominates the composition, creating a sense of calm and intellectual focus. The color palette is restricted to subtle grays, off-whites, and a hint of muted teal in the sky, reflecting a sophisticated, editorial light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTv7KA1pzNuEhFugfKWhIsRCLQhvZGifw08d7Scz8gUubHVwMHa7Go-dFBBA0gbv2AUgWpfpSKZEIY1G8GW9W3RKfGbB1PP1ksXqVqJPTYcEq2RrSWnUjs8LJvpdLIowBI3LxSiOLhnclyYlXGCXWC7e-nQHCdr88abPogWnENy4UBgTr65DSoZMgfQTI5q2aKCxwOOuBz3P1Rcy13Q9t3RcYxB1M6V9VxordM791l0SemmAdL7LApnDaxxmXIAKdSVE-mmMexugKf"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
+<!-- Edit Cover Button -->
+<button class="absolute top-6 right-6 md:top-8 md:right-8 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-2 rounded-full text-on-surface border border-outline-variant/20 shadow-[0_2px_8px_rgba(0,0,0,0.08)] hover:bg-surface-container-lowest transition-all flex items-center gap-2 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+<span class="hidden md:inline">Edit Banner</span>
+</button>
+</div>
+<!-- Profile Info Container -->
+<div class="max-w-reading-width mx-auto px-gutter relative z-10 -mt-16 md:-mt-24 mb-section-gap">
+<div class="flex flex-col items-start">
+<!-- Avatar -->
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-background overflow-hidden bg-surface-variant shadow-lg mb-6">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="A professional, candid portrait of a writer in a brightly lit, modern studio environment. The subject is slightly off-center, conveying an intellectual and approachable demeanor. The background is a soft, out-of-focus white wall with a subtle architectural detail. Lighting is high-key and natural, ensuring a pristine, minimalist look that aligns perfectly with a high-end editorial platform's clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnEgoY3X4nIKxMapAI1JPwsybMhbSv3qqKUtrbvMaAkZ_qEagarADceV4Qx36ya4SLB-XJOFU41Uvg_OJiCYIZyOmmQ3A_Ruv8IL45eNx_vO4nXncHUsY4MxAAfOhPLk_4WBC3oEovIQn6na3P59QlQaEVTtOgYC3EJwPA-Aff8g7p7TlfjnXN1u43JlsGNbKMvTJFwpKZYrfqNkpdKNGLIQ5Q2uLn8Er0a2adbEXG0JaVmB_BG9tkQmOzL2aDhvb3GioiB2X_7g4C"/>
+</div>
+<!-- Name & Title -->
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Eleanor Vance</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6 max-w-prose">
+                        Senior cultural essayist exploring the intersection of modern technology and classical philosophy. Author of "The Digital Quiet."
+                    </p>
+<!-- Stats & Actions -->
+<div class="flex flex-wrap items-center gap-6 border-t border-outline-variant/30 pt-6 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">favorite</span>
+<span class="font-label-sm text-label-sm text-on-surface">14.2k Total Likes</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">visibility</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">258k Total Views</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">article</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">42 Published</span>
+</div>
+<div class="flex-grow"></div>
+<button class="px-6 py-2 border border-secondary text-secondary font-label-sm text-label-sm rounded-full hover:bg-secondary/5 transition-colors">
+                            Edit Profile
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content (Tabs & Grid) -->
+<section class="max-w-reading-width mx-auto px-gutter mb-section-gap">
+<!-- Tabs and Sorting Container -->
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-surface-variant mb-12 gap-4 md:gap-0">
+<!-- Tabs -->
+<div class="flex items-center gap-8">
+<button class="pb-4 border-b-2 border-primary text-on-surface font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined fill text-[20px]">edit_document</span>
+                    My Posts
+                </button>
+<button class="pb-4 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+                    Saved
+                </button>
+</div>
+<!-- Sorting -->
+<div class="flex items-center gap-3 pb-4">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="sort-select">Sort by:</label>
+<select class="bg-surface-container-lowest border border-outline-variant/50 text-on-surface font-label-sm text-label-sm rounded-md py-1.5 pl-3 pr-8 focus:ring-secondary focus:border-secondary cursor-pointer hover:bg-surface-container-low transition-colors" id="sort-select">
+<option>Newest</option>
+<option>Oldest</option>
+<option>Most Liked</option>
+</select>
+</div>
+</div>
+<!-- Bento Grid Content (My Posts) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1: Featured/Published -->
+<article class="col-span-1 md:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.02)] hover:shadow-[0_8px_24px_rgba(49,103,99,0.06)] hover:scale-[1.01] transition-all duration-300 flex flex-col md:flex-row group">
+<div class="md:w-2/5 h-48 md:h-auto overflow-hidden">
+<img alt="Post Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist still life photograph of a premium leather notebook, a sleek metallic pen, and a cup of black coffee resting on a pristine white marble surface. The composition is highly structured and asymmetric, utilizing generous negative space. The lighting is crisp and directional, casting long, subtle tinted air shadows. The overall mood is quiet, focused, and deeply editorial, perfect for a long-form reading platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWAU79XvLhM_fGon3Cmy2b8jQsxVkI_x-nxVUu4UoYlax1Su3WCudWAqQrLhoI2U0XAZhVEOQWC_QiuRcIXAKYPyVQ57t1x0XQtVyIUBspCn2o-WgZKTr7cq238UafefAvy6uh_lSmtYfnqOK3PRa5npz21lh6GiJyaUb1W1qa3yxSV1k5EBUiVdNNy4kJ70Wy7oo0zAjGRr4NfoZnhYxZNVmJXlfG4mafMQqJAX1GkfLSGUHlIwi7xr3rLQugPa7YR7_2LMqw2a1a"/>
+</div>
+<div class="p-6 md:p-8 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-3 py-1 rounded-full">Published</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Oct 12, 2023</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-secondary transition-colors">The Architecture of Silence in Modern Interface Design</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">An exploration into how negative space and reduced cognitive load can foster deeper user engagement and digital well-being.</p>
+</div>
+<div class="flex items-center justify-end gap-3 mt-6 pt-4 border-t border-outline-variant/30">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 font-label-sm text-[12px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">edit</span> Edit
+                            </button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors flex items-center gap-1 font-label-sm text-[12px] uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">delete</span> Delete
+                            </button>
+</div>
+</div>
+</article>
+<!-- Card 2: Draft -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.02)] hover:shadow-[0_8px_24px_rgba(49,103,99,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col p-6 group">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-variant px-3 py-1 rounded-full">Draft</span>
+<span class="font-label-sm text-label-sm text-outline">Last edited 2 hrs ago</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-secondary transition-colors text-[24px]">Navigating the Attention Economy</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6 flex-grow">A preliminary analysis of structural incentive models in contemporary social media platforms and their impact on long-form journalism.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<span class="font-label-sm text-label-sm text-on-surface-variant">1,204 words</span>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant/50" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors rounded-full hover:bg-error-container/50" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Text Only Published -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-[0_4px_12px_rgba(49,103,99,0.02)] hover:shadow-[0_8px_24px_rgba(49,103,99,0.06)] hover:-translate-y-1 transition-all duration-300 flex flex-col p-6 group">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm text-secondary bg-secondary/10 px-3 py-1 rounded-full">Published</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sep 28, 2023</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-3 group-hover:text-secondary transition-colors text-[24px]">On Typography and Thought</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-6 flex-grow">How the microscopic decisions of font pairing and line height directly influence the reader's cognitive digestion of complex essays.</p>
+<div class="flex items-center justify-between mt-auto pt-4 border-t border-outline-variant/30">
+<div class="flex items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">visibility</span> 3.4k</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">chat_bubble</span> 42</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant/50" title="Edit">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors rounded-full hover:bg-error-container/50" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t mt-20 border-surface-variant bg-surface font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant">
+<div class="max-w-[720px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-xl font-bold text-on-surface normal-case tracking-normal font-headline-md">The Ledger</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="hover:text-on-surface transition-colors opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="hover:text-on-surface transition-colors opacity-100 hover:opacity-80" href="#">RSS Feed</a>
+<a class="hover:text-on-surface transition-colors opacity-100 hover:opacity-80" href="#">Contact</a>
+</div>
+<div class="text-xs">© 2024 The Ledger. Intellectual property preserved.</div>
+</div>
+</footer>
+</body></html>

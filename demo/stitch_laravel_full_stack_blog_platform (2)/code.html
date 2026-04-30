@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Ledger - Modern Blog</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Newsreader:opsz,wght@6..72,400;500;600&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#00201e",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#eae7e9",
+                        "on-background": "#1b1b1d",
+                        "on-error": "#ffffff",
+                        "secondary": "#316763",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary-container": "#7c839b",
+                        "surface-bright": "#fcf8fa",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "surface-container": "#f0edef",
+                        "on-tertiary-fixed": "#271901",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#bec6e0",
+                        "secondary-fixed": "#b5ede7",
+                        "surface-dim": "#dcd9db",
+                        "primary-fixed": "#dae2fd",
+                        "tertiary-container": "#271901",
+                        "outline-variant": "#c6c6cd",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#000000",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-surface": "#1b1b1d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "secondary-fixed-dim": "#9ad1cb",
+                        "background": "#fcf8fa",
+                        "surface": "#fcf8fa",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e4e2e4",
+                        "tertiary-fixed": "#fcdeb5",
+                        "on-tertiary-container": "#98805d",
+                        "primary-container": "#131b2e",
+                        "surface-tint": "#565e74",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-fixed": "#131b2e",
+                        "on-secondary-fixed-variant": "#144f4b",
+                        "on-secondary-container": "#376d69",
+                        "surface-container-low": "#f6f3f5",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e4e2e4",
+                        "inverse-surface": "#303032",
+                        "tertiary": "#000000",
+                        "secondary-container": "#b5ede7",
+                        "outline": "#76777d",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "80px",
+                        "gutter": "24px",
+                        "base-unit": "8px",
+                        "reading-width": "720px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Newsreader"],
+                        "headline-lg": ["Newsreader"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-xl": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "label-sm": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.7", "fontWeight": "400" }],
+                        "display-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary selection:text-on-secondary min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_-2px_rgba(15,23,42,0.02)]">
+<div class="flex items-center justify-between px-8 h-20 max-w-[1440px] mx-auto">
+<!-- Brand -->
+<div class="font-serif tracking-tight text-2xl font-bold text-slate-900 dark:text-slate-50">
+                The Ledger
+            </div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-8">
+<!-- Active Item: Essays -->
+<a class="text-slate-900 dark:text-slate-100 font-semibold border-b border-teal-600 active:scale-[0.98] transition-transform pb-1" href="#">
+                    Essays
+                </a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-teal-700 dark:hover:text-teal-400 transition-all duration-300 active:scale-[0.98] pb-1" href="#">
+                    Archive
+                </a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-teal-700 dark:hover:text-teal-400 transition-all duration-300 active:scale-[0.98] pb-1" href="#">
+                    Topics
+                </a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-teal-700 dark:hover:text-teal-400 transition-all duration-300 active:scale-[0.98] pb-1" href="#">
+                    About
+                </a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<!-- Search Bar -->
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+<input class="pl-9 pr-4 py-1.5 bg-surface-container-low border border-surface-variant rounded-full text-sm focus:ring-2 focus:ring-secondary focus:border-transparent outline-none w-48 transition-all focus:w-64 placeholder:text-on-surface-variant" placeholder="Search articles..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-50">
+<button class="hidden hover:text-teal-700 dark:hover:text-teal-400 transition-all duration-300 active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">notifications</span>
+</button>
+<button class="hover:text-teal-700 dark:hover:text-teal-400 transition-all duration-300 active:scale-[0.98]">
+<span class="material-symbols-outlined text-xl">person</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded hover:bg-on-background transition-colors font-label-sm text-label-sm" onclick="document.getElementById('subscribe-modal').classList.remove('hidden')">
+                    Subscribe
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow pt-32 pb-20">
+<!-- Pinned Post Hero (Asymmetric Layout) -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center group cursor-pointer">
+<!-- Image Column -->
+<div class="lg:col-span-7 overflow-hidden rounded shadow-[0_4px_40px_-4px_rgba(49,103,99,0.04)] group-hover:shadow-[0_8px_50px_-4px_rgba(49,103,99,0.08)] transition-all duration-500 relative aspect-[4/3] lg:aspect-[16/10]">
+<img alt="Pinned Post Thumbnail" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" data-alt="A sophisticated editorial photograph of an antique typewriter resting on a solid oak desk next to a steaming cup of black coffee and scattered handwritten notes. The lighting is soft and natural, coming from a nearby window, casting long, elegant shadows. The mood is contemplative and intellectual, fitting for a premium long-form reading platform. The color palette emphasizes warm woods, crisp white paper, and deep charcoal greys with a subtle teal undertone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM2WFBLTrgICAeOPGYWSYJBcLA3e3r-iunS3Y0JXV2JBTQ7Dro14KA-dg8MUANHW6piCn2JVfId8GaDlpVjB0sCxCQbdPtDV0j-ciAi5skV67tB72KAozFqkJZlgEkSUCNvwv7sQ0YAj2isddhTdWh2iVamABQrtVVhuVeW-gR6_xpnly9huS_QgxLHsw84Tw45rHzn1q2yiJr3QMwWThPc9meI5JdbERPLfe65VMNCYN6fwluLV1i-GetX66UHSWUVBWH7w3_uXDH"/>
+</div>
+<!-- Content Column -->
+<div class="lg:col-span-5 flex flex-col justify-center max-w-[500px]">
+<div class="flex items-center gap-3 mb-6">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">push_pin</span>
+                            Featured Essay
+                        </span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">12 min read</span>
+</div>
+<h1 class="font-display-xl text-display-xl text-on-background mb-6 group-hover:text-secondary transition-colors duration-300">
+                        The Architecture of Silence
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 line-clamp-3">
+                        In an era defined by relentless digital noise, the physical spaces we design to cultivate quiet reflection are more critical than ever. Exploring the brutalist libraries and hidden sanctuaries of modern cities.
+                    </p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Author" class="w-full h-full object-cover" data-alt="A striking portrait of a female writer with short dark hair, wearing a minimalist black turtleneck. She is positioned against a pristine white studio background with soft, high-key lighting that emphasizes clarity and intellect. The aesthetic perfectly matches the clean, light-mode editorial style of the surrounding user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMs_NIVxRiWg1Jx2muKB3DkzdOU_QdO46Hbr-P-K4tF-3vGyKCiznqW-SwyGkiM7S9JrYlWt7x5w337QcKdeXFBCHvRbQt3AgG0dy3DW5-nyeq9Q3ZT26o8yPJY_kA0qtbe11PIwzRJNMa1BW0zwDPALp_zBiSP1weU1mLgwFsPMgswn4dDonEWcp5BttxeRaSceeeMlx284UxfKrQxKzD4Sj82GMjuXVzHnaAX19-qV_Y1x7JebHkgYMbvL4dJ3E-wZ6iXPitrYUU"/>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-background">Eleanor Vance</div>
+<div class="font-body-md text-[14px] text-on-surface-variant">Cultural Critic</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="max-w-container-max mx-auto px-gutter mb-16">
+<hr class="border-t border-surface-variant"/>
+</div>
+<!-- Recent Posts (Bento/Asymmetric Grid) -->
+<section class="max-w-container-max mx-auto px-gutter mb-section-gap">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+<h2 class="font-headline-md text-headline-md text-on-background">Recent Writing</h2>
+<!-- Filter Bar -->
+<div class="flex items-center gap-6 border-b border-surface-variant pb-1">
+<button class="font-label-sm text-[14px] font-semibold text-secondary border-b-2 border-secondary pb-2 px-1 translate-y-[2px]">Newest</button>
+<button class="font-label-sm text-[14px] font-medium text-on-surface-variant hover:text-on-background transition-colors pb-2 px-1">Most Viewed</button>
+<button class="font-label-sm text-[14px] font-medium text-on-surface-variant hover:text-on-background transition-colors pb-2 px-1">Most Liked</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter gap-y-16">
+<!-- Empty State (Hidden by default) -->
+<div class="hidden col-span-1 md:col-span-2 lg:col-span-3 flex-col items-center justify-center py-24 text-center border border-dashed border-outline-variant rounded-lg bg-surface-container-low/50">
+<span class="material-symbols-outlined text-5xl text-outline mb-4">article</span>
+<h3 class="font-headline-md text-2xl text-on-background mb-3">No articles found</h3>
+<p class="font-body-md text-on-surface-variant max-w-md mx-auto">We couldn't find any articles matching your current filter criteria. Try selecting a different option or clearing your search.</p>
+</div>
+<!-- Card 1 -->
+<article class="group cursor-pointer flex flex-col gap-5">
+<div class="overflow-hidden rounded aspect-[4/3] shadow-sm group-hover:shadow-[0_8px_30px_rgba(49,103,99,0.06)] transition-all duration-500 border border-surface-variant group-hover:border-transparent">
+<img alt="Post image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" data-alt="A minimalist architectural interior shot of a modern library with vast floor-to-ceiling windows and clean, brutalist concrete lines. The space is flooded with serene, diffused daylight. A single figure is seated at a minimalist wooden table, engrossed in a book. The aesthetic is clean, intellectual, and spacious, utilizing a cool palette of greys, whites, and subtle teal accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAETK05bXwYBwo6kIw65JkiEQogd6vcXBNjAAjqfbTxLQnwRj9wOUsfgkygvndMmV_r-0MGGYzPGYKhaSS0HPd8A_cwaMGyPqbHGyboXD6LW9ycLS0uMtBSHeGHi_e-1TP7azGR0Xc9A3lVRDQGx-IyEQLeGu7qkCHFn7nhOEqn6ZSg-qEOaZGizgB5eP18mFsSvbVZGBZ2gP7rBdm_txsbSOOT70ClitVe5CpBsY-Xzu9YtgccVrfnQYQHapSI_zWtOeUUOSrdsnis"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-3 text-on-surface-variant font-label-sm text-[12px] uppercase tracking-wider">
+<span class="text-secondary">Philosophy</span>
+<span>•</span>
+<span>8 min read</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 1.2k</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[1.3] font-medium text-on-background mb-3 group-hover:text-secondary transition-colors">
+                            Meditations on the Blank Page
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                            The terrifying freedom of starting from nothing, and why the cursor's blink is the ultimate test of a writer's resolve.
+                        </p>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group cursor-pointer flex flex-col gap-5">
+<div class="overflow-hidden rounded aspect-[4/3] shadow-sm group-hover:shadow-[0_8px_30px_rgba(49,103,99,0.06)] transition-all duration-500 border border-surface-variant group-hover:border-transparent">
+<img alt="Post image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" data-alt="A close-up, high-contrast photograph of a classic analog camera lens resting on a textured linen surface. The lighting is dramatic but soft, highlighting the metallic rings and glass elements of the lens. The color palette is strictly monochromatic with deep blacks and bright whites, conveying a sense of artistic precision and timelessness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQYb1t4wb9qI1Uy6d3Nx46-Ed8Qp0Jl4A44QEv3BNXrG-dz7YEEwhfRZ1wfxunhtVOqiH63Ge2iLIW-iqQ3lWp3dogF8YMLiYXt3RxRZ42OyWLI4y-wq0tlXhlbZB_AtRZHRHjBX082ZLqiRSPIcIp4zYZyjX_rfWjJlKT6Q7UueB8BjrcqKXZSAdbWZr_7gF5EJqeqM9HY5QXSsDuyePnxGSR7r0HcmbjPfAlBO8duw_j77sxIPr7QFuq3Xi1HhIq4sScKHWp5vEf"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-3 text-on-surface-variant font-label-sm text-[12px] uppercase tracking-wider">
+<span class="text-secondary">Photography</span>
+<span>•</span>
+<span>5 min read</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 850</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[1.3] font-medium text-on-background mb-3 group-hover:text-secondary transition-colors">
+                            Capturing the Decisive Moment
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                            Revisiting Cartier-Bresson's philosophy in the age of algorithmic image generation and endless burst modes.
+                        </p>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group cursor-pointer flex flex-col gap-5">
+<div class="overflow-hidden rounded aspect-[4/3] shadow-sm group-hover:shadow-[0_8px_30px_rgba(49,103,99,0.06)] transition-all duration-500 border border-surface-variant group-hover:border-transparent">
+<img alt="Post image" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" data-alt="A serene overhead shot of a meticulously organized desk space. A steaming cup of matcha tea sits next to a minimal open notebook and a sleek silver fountain pen. The surface is a light ash wood. The lighting is bright and evenly distributed, creating a calming, light-mode aesthetic perfect for a digital reading environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrFUQFG6Cyya7JSqkfV_TUcXEhWraK9xeWQ88W8ROgWEsoA6pZictRTM6_DUKcYC1AZie8N14pSpRQgfRG9QkN9IsZrn_1ovHf4Ys_xFREgFl7GRh17qIIb12nye1FWDVrKIUbn2MTN7JdFefzmjgUpbow2cGb3mYCJl6lVJ3O8ZFvgFvC1Hi1T4PpKDX80yYoOoIQOMlvjHEg0qxD5SeYZOzO3SQ6AOE54CFdBOoZZUhgC5v4w7fFxgX79iVL-Rei2OqdA0axnsnN"/>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-3 text-on-surface-variant font-label-sm text-[12px] uppercase tracking-wider">
+<span class="text-secondary">Productivity</span>
+<span>•</span>
+<span>15 min read</span>
+<span>•</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">visibility</span> 3.1k</span>
+</div>
+<h3 class="font-headline-md text-[24px] leading-[1.3] font-medium text-on-background mb-3 group-hover:text-secondary transition-colors">
+                            The Myth of the Optimal Routine
+                        </h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+                            Why abandoning strict scheduling might be the key to unlocking true creative deep work and sustained focus.
+                        </p>
+</div>
+</article>
+</div>
+</section>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 mt-20">
+<button class="w-10 h-10 flex items-center justify-center rounded border border-surface-variant text-on-surface-variant hover:border-secondary hover:text-secondary transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded bg-secondary text-on-secondary font-label-sm text-label-sm">
+                1
+            </button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-transparent text-on-background hover:bg-surface-variant transition-colors font-label-sm text-label-sm">
+                2
+            </button>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-transparent text-on-background hover:bg-surface-variant transition-colors font-label-sm text-label-sm">
+                3
+            </button>
+<span class="text-on-surface-variant px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded border border-surface-variant text-on-background hover:border-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t mt-20 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-950 font-serif text-xs uppercase tracking-widest text-slate-900 dark:text-slate-50">
+<div class="max-w-[720px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-xl font-bold">
+                The Ledger
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors opacity-100 hover:opacity-80" href="#">RSS Feed</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors opacity-100 hover:opacity-80" href="#">Contact</a>
+</div>
+<div class="text-slate-400 dark:text-slate-500 text-[10px]">
+                © 2024 The Ledger. Intellectual property preserved.
+            </div>
+</div>
+</footer>
+<!-- Subscribe Modal (Hidden by default) -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center" id="subscribe-modal">
+<div class="absolute inset-0 bg-black/40 backdrop-blur-sm" onclick="document.getElementById('subscribe-modal').classList.add('hidden')"></div>
+<div class="relative bg-surface p-10 rounded-xl max-w-md w-full shadow-2xl mx-4 border border-surface-variant">
+<button class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-variant hover:text-on-background transition-colors" onclick="document.getElementById('subscribe-modal').classList.add('hidden')">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<h2 class="font-headline-md text-3xl mb-3 text-on-background text-center">Join The Ledger</h2>
+<p class="font-body-md text-on-surface-variant mb-8 text-center">Get our latest essays, cultural critiques, and deep dives delivered straight to your inbox every Sunday.</p>
+<form class="flex flex-col gap-5" onsubmit="event.preventDefault(); document.getElementById('subscribe-modal').classList.add('hidden');">
+<div>
+<label class="sr-only" for="email">Email address</label>
+<input class="w-full px-4 py-3.5 rounded-lg border border-outline-variant bg-surface-container-lowest focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary font-body-md text-on-background placeholder:text-outline" id="email" placeholder="Enter your email address" required="" type="email"/>
+</div>
+<button class="w-full bg-primary text-on-primary py-3.5 rounded-lg font-label-sm text-[15px] font-semibold hover:bg-on-background transition-colors shadow-sm" type="submit">Subscribe Now</button>
+<p class="text-center font-body-md text-[13px] text-on-surface-variant mt-2">No spam. Unsubscribe at any time.</p>
+</form>
+</div>
+</div>
+</body></html>

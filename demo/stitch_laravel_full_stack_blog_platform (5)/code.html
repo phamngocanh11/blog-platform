@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Search Results - The Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#574425",
+                        "tertiary": "#000000",
+                        "surface-variant": "#e4e2e4",
+                        "surface": "#fcf8fa",
+                        "tertiary-fixed": "#fcdeb5",
+                        "secondary": "#316763",
+                        "primary-fixed-dim": "#bec6e0",
+                        "inverse-primary": "#bec6e0",
+                        "on-secondary": "#ffffff",
+                        "primary": "#000000",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#fcf8fa",
+                        "primary-container": "#131b2e",
+                        "on-primary-container": "#7c839b",
+                        "surface-container": "#f0edef",
+                        "secondary-fixed-dim": "#9ad1cb",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-tint": "#565e74",
+                        "outline": "#76777d",
+                        "on-secondary-container": "#376d69",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-primary-fixed": "#131b2e",
+                        "on-background": "#1b1b1d",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#b5ede7",
+                        "surface-container-low": "#f6f3f5",
+                        "secondary-fixed": "#b5ede7",
+                        "on-tertiary-fixed": "#271901",
+                        "on-surface": "#1b1b1d",
+                        "outline-variant": "#c6c6cd",
+                        "on-surface-variant": "#45464d",
+                        "on-tertiary-container": "#98805d",
+                        "on-secondary-fixed": "#00201e",
+                        "surface-dim": "#dcd9db",
+                        "tertiary-container": "#271901",
+                        "surface-bright": "#fcf8fa",
+                        "on-secondary-fixed-variant": "#144f4b",
+                        "primary-fixed": "#dae2fd",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#303032",
+                        "surface-container-high": "#eae7e9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "section-gap": "80px",
+                        "reading-width": "720px",
+                        "base-unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Newsreader"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Newsreader"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Newsreader"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-slate-900 dark:text-slate-50 font-serif italic text-lg tracking-tight docked full-width top-0 z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm shadow-slate-200/20 dark:shadow-none flex justify-between items-center w-full px-8 h-16 max-w-7xl mx-auto hidden md:flex">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-serif font-bold text-slate-900 dark:text-slate-50 not-italic">The Ledger</span>
+<nav class="flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Archive</a>
+<a class="text-slate-900 dark:text-slate-50 border-b border-slate-900 dark:border-slate-50 pb-1 hover:text-slate-900 dark:hover:text-slate-100 transition-colors opacity-80 transition-opacity" href="#">Topics</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Series</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container border-none rounded-full text-sm focus:ring-1 focus:ring-primary w-64 text-on-surface" type="text" value="Architecture"/>
+</div>
+<button class="font-label-sm text-label-sm bg-primary text-on-primary px-4 py-1.5 rounded-full not-italic">Write</button>
+<button class="text-slate-500 hover:text-slate-900 transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-slate-500 hover:text-slate-900 transition-colors"><span class="material-symbols-outlined">account_circle</span></button>
+</div>
+</header>
+<main class="flex-grow flex w-full max-w-container-max mx-auto px-gutter py-section-gap gap-12">
+<!-- Sidebar Filters -->
+<aside class="w-64 flex-shrink-0 hidden lg:block border-r border-surface-variant pr-8">
+<div class="sticky top-24 space-y-8">
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4">Sort By</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="text-primary focus:ring-primary h-4 w-4 border-outline" name="sort" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Relevance</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-primary focus:ring-primary h-4 w-4 border-outline" name="sort" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Newest First</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-primary focus:ring-primary h-4 w-4 border-outline" name="sort" type="radio"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Oldest First</span>
+</label>
+</div>
+</div>
+<hr class="border-surface-variant"/>
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4">Date Range</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-primary focus:ring-primary rounded-sm h-4 w-4 border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Past 24 Hours</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="text-primary focus:ring-primary rounded-sm h-4 w-4 border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Past Week</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-primary focus:ring-primary rounded-sm h-4 w-4 border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Past Month</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-primary focus:ring-primary rounded-sm h-4 w-4 border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Past Year</span>
+</label>
+</div>
+</div>
+<hr class="border-surface-variant"/>
+<div>
+<h3 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4">Category</h3>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="text-primary focus:ring-primary rounded-sm h-4 w-4 border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Design</span>
+<span class="ml-auto font-label-sm text-xs text-outline">12</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="text-primary focus:ring-primary rounded-sm h-4 w-4 border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">Urbanism</span>
+<span class="ml-auto font-label-sm text-xs text-outline">8</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="text-primary focus:ring-primary rounded-sm h-4 w-4 border-outline" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Technology</span>
+<span class="ml-auto font-label-sm text-xs text-outline">45</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Search Results Content -->
+<div class="flex-grow max-w-reading-width">
+<div class="mb-12">
+<h1 class="font-display-xl text-display-xl text-on-background mb-4">Results for "<span class="italic text-primary">Architecture</span>"</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Found 20 articles matching your query.</p>
+</div>
+<!-- Results List -->
+<div class="space-y-16">
+<!-- Result Card 1 -->
+<article class="group relative flex flex-col md:flex-row gap-8 items-start hover:bg-surface-container-low p-6 -mx-6 rounded-xl transition-colors duration-300">
+<div class="w-full md:w-1/3 aspect-[4/3] rounded-lg overflow-hidden shrink-0 shadow-sm shadow-primary/5 group-hover:shadow-md group-hover:shadow-primary/10 transition-shadow duration-300">
+<img alt="Modern minimalist architecture building" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A striking modern architectural structure photographed from a low angle against a clear, bright sky. The building features stark, geometric lines and vast expanses of reflective glass framed by sleek, dark steel. The lighting is crisp and natural, casting sharp, distinct shadows that emphasize the minimalist design. The overall mood is cold, intellectual, and pristine, perfectly aligning with a high-end editorial aesthetic. The composition relies on a stark contrast between deep blacks and pristine whites, echoing the minimalist-modern UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQtMPk8v3FG3r9bGGksJc0Sdzle8btrKjkc5OXkSyGmg3nTEYTk5oiYZBBgbkT16crPPgtqvNjjiQGZ7PdS2Ggqq21CH0MXpfDeXOYaIyOqqz3fT-ml80gkhgRY-JlQibJWv0tRuV9IAe6rxS7EdcWiY3YDJB475bXqurscmlvbQuyPssl7KZRft99pKOZ9Gqz0Xcr_CDPDuXjxHZnoGFjT5tw20m6M0G64z5bFbTh0LlOZSQs68VVmlFW64W-dBsP2sz2S_8FMhU2"/>
+</div>
+<div class="flex-grow space-y-3">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Urbanism</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-xs">Oct 12, 2023</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background leading-tight group-hover:text-primary transition-colors">The Silent Language of Brutalist <span class="bg-tertiary-fixed/40 px-1 -mx-1">Architecture</span></h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">An exploration into how imposing concrete structures communicate permanence and civic duty in an increasingly ephemeral digital age. We examine the resurgence of brutalist forms in modern urban centers.</p>
+<div class="pt-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Author portrait" class="w-full h-full object-cover" data-alt="A tightly cropped portrait of a thoughtful writer with a serene expression. The background is completely neutral and brightly lit, creating a high-key, modern aesthetic. The subject is wearing a simple, dark tailored shirt that contrasts with the pristine white backdrop. The lighting is soft but directional, highlighting the intellectual and authoritative mood of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBobqTcEurnNJbFF5tpkLBTpQqcMMZn7Bjwh_SL48YJdDMKhLvKFSYIYNJpWw6RjMOoDuHyI1Spnb6m0_IO1nAw-ntnu-zlw1L-9eLSy_-lAJYdGFfSyIXFBA-tvuFS98NQc3vkzwu03JfCtoRTsp32kIfEMt4FwTzMAgV22HkimlSe_Xqizeef2qgp5Dh1LaLsHUkMGWu0iFFwctSIYbBbIHl288IuyLh9Ow0wbe2PTrJv3U3ChtGazc7Nsk0SuL829PloOyH6QCWh"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Eleanor Vance</span>
+</div>
+</div>
+</article>
+<hr class="border-surface-variant border-t w-1/3 ml-auto mr-auto opacity-50"/>
+<!-- Result Card 2 -->
+<article class="group relative flex flex-col md:flex-row gap-8 items-start hover:bg-surface-container-low p-6 -mx-6 rounded-xl transition-colors duration-300">
+<div class="w-full md:w-1/3 aspect-[4/3] rounded-lg overflow-hidden shrink-0 shadow-sm shadow-primary/5 group-hover:shadow-md group-hover:shadow-primary/10 transition-shadow duration-300">
+<img alt="Interior of a modern home with natural light" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A serene, minimalist interior space flooded with soft, diffused natural light from large, unseen windows. The room features a few carefully placed pieces of modernist furniture with clean lines and natural textures. The color palette is dominated by warm whites, pale creams, and subtle hints of muted teal in the shadows. The mood is exceptionally calm and contemplative, reflecting an intellectual focus and vast amounts of white space characteristic of an editorial layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU1zNjFUeIGUM3hClCK_xCYyj-vbXD3dR8XXJnQXZrMReigiSMUOx8axhsIxuleDnNEmqiolSRZjINk7Lwsf8Cd0bhvfoUzLzVEy-QgxuD7jCeFCzKhOFvezkeM8dy5e3PA2UFQu5odUus46VCZxW1zWUed0wrwig872kxnqlOWNUp47QKTDMLWJB2haPIIJ4Zaf0t9k7Ucs7qcJ3lEG0-QNwixnPBQcEM1Ch4Y-c5x9DV7lzPuBKuRViUSh-W0KT153m-Zg3pXBZO"/>
+</div>
+<div class="flex-grow space-y-3">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary">Design</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-xs">Sep 28, 2023</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background leading-tight group-hover:text-primary transition-colors">Light and Void: Designing for Silence</h2>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">In residential <span class="bg-tertiary-fixed/40 px-1 -mx-1">architecture</span>, the absence of material is often more profound than its presence. How architects are prioritizing shadow and empty space to foster deep focus.</p>
+<div class="pt-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant overflow-hidden">
+<img alt="Author portrait" class="w-full h-full object-cover" data-alt="A portrait of an authoritative male journalist with a serious, contemplative gaze. The lighting is crisp and modern, casting subtle, tinted air shadows on a clean white background. He wears a minimalist slate-grey jacket. The overall image tone is intellectual, serene, and sophisticated, perfectly matching the long-form content art style of the platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2-EmkXFV__onXGyhe9JXpglpH0AHHuB6zFEue2DghZO-3HftDExKgnnEiV2yZ0P-_0KcXwvTHo2Yt7lPIAOTSaX2cxiUmn_R5E59Qu2O575tnRFpOkcCyx8Ds5W1Bp98Y2wk71hh8GwDEvQQ2NVdh0GcniVrS7pOvSQDrg6eGFHUXpeSjpnCxDKCXRD6Lu88cbzLMsMAX_l1gXYnt5RbY3p7xpJgiF4PmciVXJZuPcrMCI0EAQMEp-WVYXWr-cKiOKFhgnQVoqC2r"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface">Marcus Thorne</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-outline hover:bg-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_back_ios_new</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-label-sm">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors font-label-sm">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-variant transition-colors font-label-sm">3</button>
+<span class="text-outline mx-2">...</span>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-outline hover:bg-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 font-serif text-xs uppercase tracking-widest text-slate-400 w-full py-20 mt-40 border-t border-slate-100 dark:border-slate-900 flat max-w-7xl mx-auto px-8 flex flex-col items-center space-y-8">
+<div class="font-serif font-black text-slate-200 dark:text-slate-800 text-3xl">THE LEDGER</div>
+<nav class="flex gap-6 flex-wrap justify-center">
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Archives</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Contact</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Press Kit</a>
+</nav>
+<div class="pt-4 opacity-60">
+            © 2024 The Ledger Editorial Platform. All rights reserved.
+        </div>
+</footer>
+</body></html>
