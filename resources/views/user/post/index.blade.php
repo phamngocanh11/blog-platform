@@ -1,76 +1,115 @@
 @extends('layouts.user')
 
 @section('content')
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight max-w-7xl mx-auto sm:px-6 lg:px-8">
-        {{ __('Tạo mới bài viết') }}
-    </h2>
-    <div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="bg-gray-50">
-                    <form id="postForm" method="POST" action="{{ route('userposts.store') }}" enctype="multipart/form-data">
+<div class="min-h-screen bg-surface-light py-12">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        {{-- Header --}}
+        <div class="mb-8">
+            <h1 class="text-4xl font-display font-bold text-primary mb-2">Create New Post</h1>
+            <p class="text-secondary-dark">Share your thoughts with the world</p>
+        </div>
+
+        {{-- Form Card --}}
+        <div class="bg-white rounded-2xl shadow-sm border border-secondary-light/20 p-8">
+            <div class="bg-white">
+                    <form id="postForm" method="POST" action="{{ route('userposts.store') }}" enctype="multipart/form-data" class="space-y-6">
                         @csrf
 
-                        <div class="mt-4">
-                            <label for="thumbnail">Thumbnail</label>
-                            <input type="file" name="thumbnail" id="thumbnail"
-                                   accept="image/jpeg, image/png, image/jpg, image/gif"
-                                   class="mt-1 mb-3 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
-                        </div>
-
+                        {{-- Thumbnail Upload --}}
                         <div>
-                            <label for="post_name">Tên bài viết</label>
-                            <input type="text" name="post_name"
-                                   class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                                   value="{{ old('post_name') }}" required>
+                            <label class="block text-sm font-medium text-primary mb-2">Featured Image</label>
+                            <div class="relative border-2 border-dashed border-secondary-light/30 rounded-xl p-8 text-center hover:border-secondary transition-colors">
+                                <input type="file" 
+                                       name="thumbnail" 
+                                       id="thumbnail"
+                                       accept="image/jpeg, image/png, image/jpg, image/gif"
+                                       class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <svg class="w-12 h-12 mx-auto text-secondary-light mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                <p class="text-secondary-dark">Click to upload or drag and drop</p>
+                                <p class="text-sm text-secondary-dark/60 mt-1">PNG, JPG, GIF up to 2MB</p>
+                            </div>
                         </div>
 
-                        <div class="mt-4">
-                            <label for="post_content">Nội dung bài viết</label>
-                            <div id="editor"
-                                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                                 style="min-height: 200px;"></div>
+                        {{-- Post Title --}}
+                        <div>
+                            <label for="post_name" class="block text-sm font-medium text-primary mb-2">Post Title *</label>
+                            <input type="text" 
+                                   name="post_name"
+                                   id="post_name"
+                                   class="w-full px-4 py-3 border border-secondary-light/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                                   placeholder="Enter an engaging title..."
+                                   value="{{ old('post_name') }}" 
+                                   required>
                         </div>
 
-                        <div class="mt-4">
-                            <label for="category_id">Thể loại</label>
-                            <select name="category_id"
-                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                                    required>
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
+                        {{-- Post Content --}}
+                        <div>
+                            <label class="block text-sm font-medium text-primary mb-2">Content *</label>
+                            <div id="editor" 
+                                 class="bg-white border border-secondary-light/30 rounded-lg"
+                                 style="min-height: 400px;"></div>
                         </div>
 
-                        <div class="mt-4">
-                            <label for="series">Series</label>
-                            <input type="text" name="series"
-                                   class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-                                   value="{{ old('series') }}">
+                        {{-- Category & Series Row --}}
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="category_id" class="block text-sm font-medium text-primary mb-2">Category *</label>
+                                <select name="category_id"
+                                        id="category_id"
+                                        class="w-full px-4 py-3 border border-secondary-light/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                                        required>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="series" class="block text-sm font-medium text-primary mb-2">Series (Optional)</label>
+                                <input type="text" 
+                                       name="series"
+                                       id="series"
+                                       class="w-full px-4 py-3 border border-secondary-light/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                                       placeholder="Add to a series..."
+                                       value="{{ old('series') }}">
+                            </div>
                         </div>
 
-                        <div class="mt-4">
-                            <label for="tags">Tags (cách nhau bằng dấu phẩy)</label>
-                            <input type="text" name="tags"
-                                   class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                        {{-- Tags --}}
+                        <div>
+                            <label for="tags" class="block text-sm font-medium text-primary mb-2">Tags</label>
+                            <input type="text" 
+                                   name="tags"
+                                   id="tags"
+                                   class="w-full px-4 py-3 border border-secondary-light/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                                   placeholder="Separate tags with commas (e.g., javascript, tutorial, web)"
                                    value="{{ old('tags') }}">
+                            <p class="text-sm text-secondary-dark/60 mt-1">Add up to 5 tags to help readers find your post</p>
                         </div>
 
-                        <div class="mt-4">
-                            <label for="hidden">Ẩn</label>
+                        {{-- Visibility --}}
+                        <div>
+                            <label for="hidden" class="block text-sm font-medium text-primary mb-2">Visibility</label>
                             <select name="hidden"
-                                    class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                                    id="hidden"
+                                    class="w-full px-4 py-3 border border-secondary-light/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
                                     required>
-                                <option value="0">Không</option>
-                                <option value="1">Ẩn</option>
+                                <option value="0">Published - Visible to everyone</option>
+                                <option value="1">Draft - Only visible to you</option>
                             </select>
                         </div>
 
-                        <div class="mt-4">
+                        {{-- Action Buttons --}}
+                        <div class="flex items-center justify-between pt-6 border-t border-secondary-light/20">
+                            <a href="{{ route('blogs.index') }}" 
+                               class="px-6 py-3 text-secondary-dark hover:text-primary transition-colors">
+                                Cancel
+                            </a>
                             <button type="submit"
-                                    class="bg-[#98d0c0] text-white px-4 py-2 rounded hover:bg-[#3c483d] transition duration-200">
-                                Tạo mới
+                                    class="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-colors">
+                                Publish Post
                             </button>
                         </div>
                     </form>
@@ -78,8 +117,9 @@
             </div>
         </div>
     </div>
+</div>
 
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function () {
             var quill = new Quill('#editor', {
                 theme: 'snow',
@@ -152,15 +192,15 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                            alert('Bài viết đã được tạo thành công!');
+                            alert('Post created successfully!');
                             window.location.href = '/';
                         } else {
-                            alert('Có lỗi xảy ra, vui lòng thử lại!');
+                            alert('An error occurred. Please try again.');
                         }
                     })
                     .catch(error => {
-                        console.error('Lỗi:', error.message);
-                        alert('Có lỗi xảy ra: ' + error.message);
+                        console.error('Error:', error.message);
+                        alert('An error occurred: ' + error.message);
                     });
             };
         });
